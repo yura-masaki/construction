@@ -1,3 +1,5 @@
+/* foundation */
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap");
 /*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -400,7 +402,25 @@ th {
   font-weight: bold;
 }
 
-header {
-  margin: 2rem;
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  background-color: #EAF5F5;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 62.5%;
+  margin: 1rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* layout */
+/* object */
+.u-margin {
+  margin: 1vw 0;
 }
 /*# sourceMappingURL=map/style.css.map */

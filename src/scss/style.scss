@@ -1,6 +1,22 @@
-@use "foundation";
-@use "global";
-@use "layout";
-@use "object/component";
-@use "object/project";
-@use "object/utility";
+/* foundation */
+@use "foundation/reset";
+@use "foundation/base";
+@use "foundation/font";
+@use "foundation/mixin";
+
+/* layout */
+@use "layout/header";
+@use "layout/footer";
+@use "layout/main";
+@use "layout/hero";
+
+/* object */
+
+// Component
+@use "object/component/button";
+
+// Project
+
+// Utility
+@use "object/utility/margin";
+@use "object/utility/padding";

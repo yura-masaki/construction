@@ -1,0 +1,22 @@
+@use "../foundation/font" as *;
+
+
+$main-color-bg: #EAF5F5;
+$main-color: #2F9B9B;
+$sub-color1: #FEDFE1;
+$sub-color2: #FFE8B7;
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    background-color: $main-color-bg;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 62.5%;
+}
+
+a {
+    cursor: pointer;
+}

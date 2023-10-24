@@ -26,7 +26,7 @@ function scss() {
             sourcemaps: true
         })
         .pipe(plumber({
-            errorHandler: notify.onError("Error: <%= error.message %>") 
+            errorHandler: notify.onError("Error: <%= error.message %>")
         }))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer(['last 2 versions', 'ie >= 10', 'Android >= 4', 'iOS >= 8']))
