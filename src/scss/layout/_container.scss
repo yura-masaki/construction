@@ -1,0 +1,16 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+
+.l-header {
+    &__contaier {
+        max-width: calc(800px + 2rem);
+        margin-inline: auto;
+        padding: 1rem;
+    }
+
+    @include sp {
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
+}
