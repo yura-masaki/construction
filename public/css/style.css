@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* foundation */
 @import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap");
 /*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
@@ -424,17 +425,106 @@ html {
   scroll-padding-top: 20px;
 }
 
-.p-about {
-  width: 100%;
+body {
+  position: relative;
+  height: 100vh;
 }
-.p-about::after {
-  content: "";
+
+html,
+body,
+a {
+  cursor: none;
+}
+
+#js__mouse {
+  pointer-events: none;
   position: fixed;
+  top: -30px;
+  left: -30px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 191, 0, 0.5);
+  border-radius: 50%;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 9999;
+  opacity: 0;
+}
+
+#js__cursor {
+  pointer-events: none;
+  position: fixed;
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(25, 214, 113, 0.5);
+  border-radius: 50%;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: width 0.3s ease-out, height 0.3s ease-out;
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+  z-index: 10000;
+  opacity: 0;
+}
+
+#js__mouse.js__hover {
+  width: 100px;
+  height: 100px;
+}
+
+#js__mouse.js__hover #mask {
+  opacity: 1;
+}
+
+#js__cursor.js__hover {
+  width: 70px;
+  height: 70px;
+}
+
+#js__cursor.js__hover #mask {
+  opacity: 1;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
-  border: 5px solid #007C4A;
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+#mask:hover .js__hover {
+  opacity: 1;
+}
+
+#p-header {
+  position: fixed;
+  top: -50px;
+  left: 0;
   width: 100%;
-  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  z-index: 100;
+}
+
+#p-header.visible {
+  top: 0;
+  /* 表示時の位置 */
+}
+
+.p-about {
+  width: 100%;
 }
 .p-about__container {
   max-width: calc(100% + 2rem);
@@ -1942,6 +2032,20 @@ html {
     margin-top: 2rem;
   }
 }
+.p-about__recruit__btnarea a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.p-about__recruit__btnarea a:hover .p-about__recruit__btnarea__wrap {
+  background: white;
+}
+.p-about__recruit__btnarea a:hover .p-about__recruit__btnarea__wrap-button {
+  color: #E32D2D;
+}
+.p-about__recruit__btnarea a:hover .p-about__recruit__btnarea__wrap-arrow {
+  background: #E32D2D;
+  color: white;
+}
 .p-about__recruit__btnarea__wrap {
   width: 100%;
   border: 1px solid white;
@@ -1960,10 +2064,10 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.p-about__recruit__btnarea-button {
+.p-about__recruit__btnarea__wrap-button {
   font-size: 14px;
 }
-.p-about__recruit__btnarea-arrow {
+.p-about__recruit__btnarea__wrap-arrow {
   width: 30px;
   height: 30px;
   display: -webkit-box;
@@ -1983,7 +2087,6 @@ html {
   border-radius: 50%;
   font-size: 20px;
 }
-
 .u-margin {
   margin: 1vw 0;
 }
